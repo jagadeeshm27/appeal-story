@@ -7,19 +7,19 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #f4f4f4;
-    overflow: hidden;
+    overflow: hidden; /* Prevent scroll if image is very large */
 }
 
 .container {
     position: relative;
-    max-width: 1200px;
+    max-width: 1200px; /* Adjust based on your image size */
     width: 90%;
     margin: 20px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden; /* Ensures image doesn't spill out */
 }
 
 .main-image {
@@ -39,10 +39,10 @@ body {
 
 .hotspot {
     position: absolute;
-    width: 50px;
+    width: 50px; /* Size of the clickable area */
     height: 50px;
-    background-color: rgba(255, 0, 0, 0.4);
-    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.4); /* Semi-transparent red for visibility, make it fully transparent later */
+    border-radius: 50%; /* Makes it circular */
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: 2px solid rgba(255, 0, 0, 0.8);
@@ -55,29 +55,30 @@ body {
 }
 
 .hotspot:hover {
-    background-color: rgba(255, 0, 0, 0.7);
+    background-color: rgba(255, 0, 0, 0.7); /* Darker on hover */
 }
 
+/* Modal Styling */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: auto;
+    margin: auto; /* Centered */
     padding: 30px;
     border: 1px solid #888;
-    width: 80%;
+    width: 80%; /* Could be more or less, depending on screen size */
     max-width: 600px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
