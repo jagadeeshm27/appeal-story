@@ -8,43 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.getElementById('nextIssue');
 
     let currentHotspotId = '';
-    let currentIssueIndex = 0; // For cycling through issues within a hotspot
+    let currentIssueIndex = 0;
 
-    // Data for your issues - structured for cycling
     const issueData = {
-        'hotspot1': [ // Results Day Mix-up icon
+        'hotspot1': [
             {
-                title: 'Issue 1: Incorrect Results Day Advice',
-                text: 'On my results day, I was incorrectly told by university staff that I had passed my degree with a "MSc Pass with Merit." This incorrect information caused me to believe everything was fine and prevented me from taking immediate action to address the failing module.'
+                title: 'Medical Background and Eye Condition',
+                text: 'I was diagnosed with keratoconus when I was 14. After multiple surgeries and post-surgery complications, I faced recurring flare-ups with cloudy vision, severe redness, and pain. The stitches in my cornea sometimes loosened and poked my eyelid, causing extreme pain. This continued even after I arrived in the UK. My GP confirmed my diagnosis and referred me to a specialist for review, noting these flare-ups have affected my vision and studies since August 2023.'
             },
             {
-                title: 'Issue 2: Contradictory Advice (IAG vs. Student Experience)',
-                text: 'When I later realized the initial information was incorrect, I sought guidance. The International Advice and Guidance (IAG) team correctly advised me to contact the Student Union (Guild). However, a member of the Student Experience team then explicitly told me it was too late to involve the Guild and that I should instead apply for a retrospective EC directly, leading to further delays and confusion.'
-            },
-            {
-                title: 'Issue 3: False Hope from IAG Email',
-                text: 'Following the submission of my retrospective EC, an email from the IAG team implied that I could potentially be granted a Master\'s degree as an outcome of the EC process. This gave me false hope and caused me to wait weeks for a decision that ultimately was not what was suggested.'
+                title: 'Impact on Studies and COMP315 Exam',
+                text: 'My eye flare-ups continued unpredictably in the UK, making studying and working difficult. For assignments, I managed to adjust by working in short bursts, but the one-day exam format for COMP315 was different. During the exam in May 2025, I suffered a severe flare-up, which made it extremely difficult to read and write. Despite my strong understanding of the subject and high coursework scores, I fell just 6 marks short of a pass due to these circumstances.'
             }
         ],
-        'hotspot2': [ // Conflicting Advice (email/letter icon)
+        'hotspot2': [
             {
-                title: 'Issue 4: The Final Diploma Decision & Two Failing Modules',
-                text: 'On September 8th, I finally learned that the EC process was for a resit, not for granting a degree. On the same day, the university officially changed my award to a Postgraduate Diploma (Dip). Compounding this, the university is now acknowledging two separate modules where I was just short of a pass (one with 3 marks less, another with 6 marks less), proving a consistent impact from my medical condition. Yet, they opted for a diploma.'
+                title: 'Why I Did Not Submit an EC in Time',
+                text: 'I did not submit an EC claim during the exam period because my condition was at its worst. When results came out, the student portal incorrectly showed I had a "Pass with Merit." I went in person to the Computer Science Student Experience Team, and a staff member, Elle, reassured me several times that I had passed my MSc and had not been given an exit award. It was only on 21 July 2025 that I learned my official record showed an exit award. This was devastating, as I had lost valuable time acting in good faith on incorrect information from the university.'
             }
         ],
-        'hotspot3': [ // Visa Deadline icon
+        'hotspot3': [
             {
-                title: 'Issue 5: Imminent Visa Expiry & Job Offer at Risk',
-                text: 'The university\'s decision to offer a resit in 2025-26, and to award a Postgraduate Diploma, is unworkable because my Graduate Route visa expires on September 26, 2025. I also have a job offer contingent on obtaining my Master\'s degree. The university\'s proposed solution completely ignores these critical and time-sensitive circumstances, putting my entire future in the UK at risk.'
+                title: 'The Wider Impact: Family, Career, and Visa',
+                text: 'My mother, who is my only family and suffers from rheumatoid arthritis, mortgaged our home and is paying a heavy monthly interest to support my education. I have a job offer and another career opportunity that would allow me to repay this debt and lift the burden from her shoulders. However, all of this depends on my MSc, as my Graduate Route visa expires on 26 September 2025. Without the degree, I will lose my visa, career, and our family home.'
             }
         ],
-        'hotspot4': [ // Two modules (diploma/document icon)
+        'hotspot4': [
             {
-                title: 'Issue 6: Contradiction in Compensation Policy',
-                text: 'Despite university policy suggesting only one module can be compensated for an award, the university\'s own staff have acknowledged that I have *two* modules where I was just short of a pass. This indicates a consistent impact of my medical condition. However, the decision made still results in a Diploma, which seems illogical given the clear pattern and the exceptional circumstances outlined in the university\'s own policy 5.5(b) allowing awards "notwithstanding any failed assessments" in exceptional circumstances.'
+                title: 'My Respectful Request for Discretion',
+                text: 'I am not asking for sympathy, but for fairness. I believe my situation meets the university’s own criteria for "exceptional circumstances." A resit is not a solution, as it would make me ineligible for the Graduate Route visa. For me, this is about my entire future, my family’s survival, and honouring the sacrifices that brought me here. I respectfully ask the Committee to exercise discretion and award me the MSc I have worked for, as I have consistently demonstrated the ability and determination required to earn it.'
             }
         ]
-        // Add more hotspots and issues as needed
     };
 
     function updateModalContent() {
@@ -61,9 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
     hotspots.forEach(hotspot => {
         hotspot.addEventListener('click', () => {
             currentHotspotId = hotspot.id;
-            currentIssueIndex = 0; // Reset to first issue for new hotspot
+            currentIssueIndex = 0;
             updateModalContent();
-            modal.style.display = 'flex'; // Use flex to center
+            modal.style.display = 'flex';
         });
     });
 
@@ -71,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
     });
 
-    // Close when clicking outside the modal content
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';
