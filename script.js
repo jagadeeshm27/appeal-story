@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const issuesForHotspot = issueData[currentHotspotId];
         if (issuesForHotspot && issuesForHotspot.length > 0) {
             modalTitle.textContent = issuesForHotspot[currentIssueIndex].title;
-            modalText.textContent = issuesForHotpot[currentIssueIndex].text;
+            modalText.textContent = issuesForHotspot[currentIssueIndex].text;
 
             prevButton.disabled = currentIssueIndex === 0;
             nextButton.disabled = currentIssueIndex === issuesForHotspot.length - 1;
